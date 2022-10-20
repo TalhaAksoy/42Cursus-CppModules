@@ -8,7 +8,7 @@ int main()
 {
 	Phone	phone;
 	string	process;
-	string	userName;
+	int		searchIndex;
 
 	for ( ; ; )
 	{
@@ -18,9 +18,9 @@ int main()
 			phone.setContact();
 		else if (process == "SEARCH")
 		{
-			cout << "Sign FirstName: ";
-			cin >> userName;
-			phone.getUser(userName);
+			cout << "Sign IndexNumber: ";
+			cin >> searchIndex;
+			phone.getUser(searchIndex);
 		}
 		else if (process == "EXIT")
 			break ;

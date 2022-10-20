@@ -51,9 +51,9 @@ void	printUser(std::string str)
 
 }
 
-void Phone::getUser(std::string firstName) {
+void Phone::getUser(int index) {
 	for(int i = 0; i < 8; i++){
-		if (this->contact[i].getFirstName() == firstName)
+		if (this->contact[i].getIndex() == index)
 		{
 			cout << "|     Index| FirstName|  LastName|  NickName|" << endl;
 			cout << "|         " << this->contact[i].getIndex();

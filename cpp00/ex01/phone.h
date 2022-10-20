@@ -16,7 +16,7 @@ using std::cin;
 class Phone {
 public:
 	void	setContact(void);
-	void	getUser(string firstName);
+	void	getUser(int index);
 private:
     Contact contact[8];
 };
