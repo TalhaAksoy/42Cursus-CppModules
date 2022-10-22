@@ -6,7 +6,7 @@
 #define PHONE_BOOK_H
 
 #include <iostream>
-#include "contact.h"
+#include "Contact.h"
 
 using std::string;
 using std::cout;
@@ -16,9 +16,11 @@ using std::cin;
 class PhoneBook {
 public:
 	void		setContact(void);
-	void		getUser(string index);
-	int			strchrcmp(std::string s1,char c);
+	void		getUser(void);
+	int			strchrcmp(std::string s1);
 	std::string	takeInput(void);
+	int			getUserWithIndex(string index);
+	int 		isUser(int index);
 private:
     Contact contact[8];
 };

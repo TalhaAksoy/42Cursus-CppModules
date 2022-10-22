@@ -2,7 +2,7 @@
 // Created by Selim talha Aksoy on 10/20/22.
 //
 
-#include "contact.h"
+#include "Contact.h"
 
 void Contact::setFirstName(std::string firstName) {
 	this->firstName = firstName;

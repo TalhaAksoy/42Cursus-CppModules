@@ -2,7 +2,7 @@
 // Created by Selim talha Aksoy on 10/20/22.
 //
 
-# include "phoneBook.h"
+# include "PhoneBook.h"
 
 int main()
 {
@@ -13,15 +13,21 @@ int main()
 
 	for ( ; ; )
 	{
-		cout << "Sign a Process" << endl;
+		cout << "Sign a Process(ADD , SEARCH , EXIT)" << endl;
 		std::getline(cin, process);
 		if(process == "ADD")
 			phone.setContact();
 		else if (process == "SEARCH")
 		{
+			if (!phone.isUser(0))
+			{
+				cout << "No user in Phone Book" << endl;
+				continue ;
+			}
+			phone.getUser();
 			cout << "Sign IndexNumber: ";
-			std::getline(cin, searchIndex);
-			phone.getUser(searchIndex);
+			getline(cin, searchIndex);
+			phone.getUserWithIndex(searchIndex);
 		}
 		else if (process == "EXIT")
 			break ;
