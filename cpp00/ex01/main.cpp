@@ -2,24 +2,25 @@
 // Created by Selim talha Aksoy on 10/20/22.
 //
 
-# include "phone.h"
+# include "phoneBook.h"
 
 int main()
 {
-	Phone	phone;
-	string	process;
-	int		searchIndex;
+	PhoneBook	phone;
+	Contact		contact;
+	string		process;
+	string		searchIndex;
 
 	for ( ; ; )
 	{
 		cout << "Sign a Process" << endl;
-		cin >> process;
+		std::getline(cin, process);
 		if(process == "ADD")
 			phone.setContact();
 		else if (process == "SEARCH")
 		{
 			cout << "Sign IndexNumber: ";
-			cin >> searchIndex;
+			std::getline(cin, searchIndex);
 			phone.getUser(searchIndex);
 		}
 		else if (process == "EXIT")

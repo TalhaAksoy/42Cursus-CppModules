@@ -2,8 +2,8 @@
 // Created by Selim talha Aksoy on 10/20/22.
 //
 
-#ifndef CPP_MODULES_PHONE_H
-#define CPP_MODULES_PHONE_H
+#ifndef PHONE_BOOK_H
+#define PHONE_BOOK_H
 
 #include <iostream>
 #include "contact.h"
@@ -13,13 +13,15 @@ using std::cout;
 using std::endl;
 using std::cin;
 
-class Phone {
+class PhoneBook {
 public:
-	void	setContact(void);
-	void	getUser(int index);
+	void		setContact(void);
+	void		getUser(string index);
+	int			strchrcmp(std::string s1,char c);
+	std::string	takeInput(void);
 private:
     Contact contact[8];
 };
 
 
-#endif //CPP_MODULES_PHONE_H
+#endif //PHONE_BOOK_H

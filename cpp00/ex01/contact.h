@@ -2,8 +2,8 @@
 // Created by Selim talha Aksoy on 10/20/22.
 //
 
-#ifndef CPP_MODULES_CONTACT_H
-#define CPP_MODULES_CONTACT_H
+#ifndef CONTACT_H
+#define CONTACT_H
 
 #include <iostream>
 
@@ -36,4 +36,4 @@ private:
 };
 
 
-#endif //CPP_MODULES_CONTACT_H
+#endif //CONTACT_H
