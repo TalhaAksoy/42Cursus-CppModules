@@ -12,7 +12,7 @@ public:
 	Zombie*	newZombie(std::string name);
 	void	randomChump(std::string name);
 	void	setName(const std::string& name);
-	Zombie* zombieHorde( int N, std::string name );
+	static Zombie* zombieHorde( int N, std::string name );
 
 	~Zombie();
 };

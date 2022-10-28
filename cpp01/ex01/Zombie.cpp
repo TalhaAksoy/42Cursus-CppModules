@@ -1,6 +1,6 @@
 #include "Zombie.h"
 
-Zombie::Zombie() : Name("Undefined"){
+Zombie::Zombie(){
 }
 
 Zombie::Zombie(const std::string &name) {
