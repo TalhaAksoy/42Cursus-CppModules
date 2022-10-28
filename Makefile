@@ -1,6 +1,6 @@
-MESSAGE = "UPDATE"
+M = "UPDATE"
 
 git:
 	git add .
-	git commit -m $(MESSAGE)
+	git commit -m "$(M)"
 	git push
