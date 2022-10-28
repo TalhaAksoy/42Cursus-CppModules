@@ -5,6 +5,6 @@
 #include "Zombie.h"
 
 void Zombie::randomChump(std::string name) {
-	this->newZombie(name);
-	this->announce();
+	Zombie zombie(name);
+	zombie.announce();
 }
