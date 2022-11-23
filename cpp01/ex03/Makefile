@@ -1,6 +1,9 @@
-NAME = zombie
+NAME = Weapon
 
-SRCS = main.cpp
+SRCS =	main.cpp \
+		HumanA.cpp \
+		HumanB.cpp	\
+		Weapon.cpp	\
 
 OBJS = ${SRCS:.cpp=.o}
 
