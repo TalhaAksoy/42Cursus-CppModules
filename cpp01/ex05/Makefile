@@ -1,7 +1,6 @@
-NAME = replace
+NAME = harl
 
-SRCS =	main.cpp	\
-		replace.cpp
+SRCS =	$(wildcard *.cpp)
 
 OBJS = ${SRCS:.cpp=.o}
 
