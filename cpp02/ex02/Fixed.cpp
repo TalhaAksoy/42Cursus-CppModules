@@ -11,38 +11,31 @@ Fixed::Fixed():nbr(0){
 Fixed::Fixed(int getNum) {
 	std::cout << "Integer Constructor Called" << std::endl;
 	this->nbr = floatToFixed(getNum);
-	std::cout << "a " << this->nbr << std::endl;
 }
 
 Fixed::Fixed(float getFloat) {
 	std::cout << "Float Constructor Called " <<  std::endl;
 	this->nbr = roundf(floatToFixed(getFloat));
-	std::cout << "b " << this->nbr << std::endl;
 }
 
 Fixed::Fixed(const Fixed &var) {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = var;
 }
 
 Fixed::~Fixed() {
-	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed &Fixed::operator=(const Fixed &other) {
-	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
 		this->nbr = other.getRawBits();
 	return (*this);
 }
 
 int Fixed::getRawBits() const {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->nbr);
 }
 
 void Fixed::setRawBits(const int raw) {
-	std::cout << "setRawBit member function called" << std::endl;
 	this->nbr = raw;
 }
 
@@ -63,7 +56,10 @@ bool Fixed::operator!=(const Fixed &var) const {
 }
 
 Fixed Fixed::operator*(const Fixed &var) const {
-	return (this->getRawBits() * var.getRawBits());
+	Fixed ret;
+
+	ret.setRawBits(this->nbr * var.nbr >> this->nbrBits);
+	return ret;
 }
 
 Fixed Fixed::operator+(const Fixed &var) const {
@@ -97,7 +93,10 @@ Fixed Fixed::operator-(const Fixed &var) const {
 }
 
 Fixed Fixed::operator/(const Fixed &var) const {
-	return (this->getRawBits() / var.getRawBits());
+	Fixed ret;
+
+	ret.setRawBits((this->nbr * (1 << this->nbrBits)) / var.nbr);
+	return ret;
 }
 
 bool Fixed::operator==(const Fixed &var) const {
