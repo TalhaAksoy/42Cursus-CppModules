@@ -5,16 +5,13 @@
 #include "Fixed.h"
 
 Fixed::Fixed():nbr(0){
-	std::cout << "Default Constructor called" << std::endl;
 }
 
 Fixed::Fixed(int getNum) {
-	std::cout << "Integer Constructor Called" << std::endl;
 	this->nbr = floatToFixed(getNum);
 }
 
 Fixed::Fixed(float getFloat) {
-	std::cout << "Float Constructor Called " <<  std::endl;
 	this->nbr = roundf(floatToFixed(getFloat));
 }
 
@@ -63,7 +60,10 @@ Fixed Fixed::operator*(const Fixed &var) const {
 }
 
 Fixed Fixed::operator+(const Fixed &var) const {
-	return (this->getRawBits() + var.getRawBits());
+	Fixed ret;
+
+	ret.setRawBits(this->getRawBits() + var.getRawBits());
+	return (ret);
 }
 
 Fixed &Fixed::operator++() {
@@ -89,7 +89,10 @@ Fixed Fixed::operator--(int) {
 }
 
 Fixed Fixed::operator-(const Fixed &var) const {
-	return (this->getRawBits() - var.getRawBits());
+	Fixed ret;
+
+	ret.setRawBits(this->getRawBits() - var.getRawBits());
+	return (ret);
 }
 
 Fixed Fixed::operator/(const Fixed &var) const {

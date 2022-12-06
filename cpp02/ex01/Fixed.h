@@ -8,8 +8,8 @@
 # include <iostream>
 # include <cmath>
 
-# define floatToFixed(x) (x * (float)(1 << nbrBits)) // times left
-# define fixedToFloat(x) ((float)x / (float)(1 << nbrBits)) // divide right
+# define floatToFixed(x) (x * (float)(1 << nbrBits))
+# define fixedToFloat(x) ((float)x / (float)(1 << nbrBits))
 
 class Fixed {
 private:
