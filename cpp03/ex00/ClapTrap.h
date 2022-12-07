@@ -16,7 +16,7 @@ private:
 public:
 	ClapTrap(void);
 	ClapTrap(std::string name);
-	ClapTrap()
+	ClapTrap(const ClapTrap& var);
 	~ClapTrap();
 
 	ClapTrap &operator = (const ClapTrap &var);

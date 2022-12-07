@@ -12,6 +12,19 @@ ClapTrap::ClapTrap() {
 	std::cout << "Constructor Called" << std::endl;
 }
 
+ClapTrap::ClapTrap(const ClapTrap &var) {
+	std::cout << "Copy Constructor Called" << std::endl;
+	*this = var;
+}
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &var) {
+	this->name = var.name;
+	this->hitPoint = var.hitPoint;
+	this->energyPoint = var.energyPoint;
+	this->attackDamage = var.attackDamage;
+	std::cout << "Operator Overlaod Called" << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string name) {
 	this->name = name;
 	this->attackDamage = 0;

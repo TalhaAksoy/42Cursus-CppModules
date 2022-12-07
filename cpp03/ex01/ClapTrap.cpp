@@ -5,19 +5,34 @@
 #include "ClapTrap.h"
 
 ClapTrap::ClapTrap() {
-	this->attackDamage = 0;
-	this->energyPoint = 10;
-	this->hitPoint = 10;
+	this->attackDamage = 20;
+	this->energyPoint = 50;
+	this->hitPoint = 100;
 	this->name = "Undefined Name";
 	std::cout << "Constructor Called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) {
 	this->name = name;
-	this->attackDamage = 0;
-	this->energyPoint = 10;
-	this->hitPoint = 10;
+	this->attackDamage = 20;
+	this->energyPoint = 50;
+	this->hitPoint = 100;
 	std::cout << "Name Constructor Called" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &var) {
+	*this = var;
+	std::cout << "Copy Constructor Called" << std::endl;
+}
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &var) {
+	this->name = var.name;
+	this->hitPoint = var.hitPoint;
+	this->energyPoint = var.energyPoint;
+	this->attackDamage = var.attackDamage;
+	std::cout << "Operator Overlaod Called" << std::endl;
+	return (*this);
+
 }
 
 ClapTrap::~ClapTrap() {

@@ -6,10 +6,7 @@
 
 int main(){
 	ScavTrap talha;
-	ClapTrap* asd = new ScavTrap();
+	ScavTrap mehemet;
 
-	asd->attack("talha");
-	talha.attack("asd");
-	talha.beRepaired(20);
-	talha.guardGate();
+	talha = mehemet;
 }

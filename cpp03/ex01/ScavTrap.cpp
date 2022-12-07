@@ -5,7 +5,7 @@
 #include "ScavTrap.h"
 
 ScavTrap::ScavTrap() {
-	std::cout << "asd2" << std::endl;
+	std::cout << "ScavTrap Constructor Called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name){
@@ -15,7 +15,7 @@ ScavTrap::ScavTrap(std::string name){
 	this->attackDamage = 20;
 }
 ScavTrap::~ScavTrap() {
-	std::cout << "Deconstructor" << std::endl;
+	std::cout << "ScavTrap Deconstructor" << std::endl;
 }
 void ScavTrap::attack(const std::string &target) {
 	if (this->energyPoint > 0 && this->hitPoint > 0){
