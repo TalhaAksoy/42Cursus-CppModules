@@ -5,10 +5,6 @@
 #include "ScavTrap.h"
 
 ScavTrap::ScavTrap() {
-	this->name = "Undefined Name";
-	this->hitPoint = 100;
-	this->energyPoint = 50;
-	this->attackDamage = 20;
 	std::cout << "ScavTrap Constructor Called" << std::endl;
 }
 
@@ -50,5 +46,5 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &var) {
 	this->hitPoint = var.hitPoint;
 	this->attackDamage = var.attackDamage;
 	std::cout << "ScavTrap Operator Load Called" << std::endl;
-	return (*this);
+	return  (*this);
 }

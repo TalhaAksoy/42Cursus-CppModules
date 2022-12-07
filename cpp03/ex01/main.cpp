@@ -5,8 +5,8 @@
 # include "ScavTrap.h"
 
 int main(){
-	ScavTrap talha;
-	ScavTrap mehemet;
+	ClapTrap* osman = new ScavTrap("osman");
 
-	talha = mehemet;
+	osman->attack("asd");
+
 }
