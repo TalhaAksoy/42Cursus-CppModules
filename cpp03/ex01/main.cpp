@@ -5,8 +5,10 @@
 # include "ScavTrap.h"
 
 int main(){
-	ClapTrap* osman = new ScavTrap("osman");
+	ScavTrap talha("talha");
 
-	osman->attack("asd");
+	talha.attack("asd");
+	talha.takeDamage(1000);
+	talha.beRepaired(10);
 
 }
