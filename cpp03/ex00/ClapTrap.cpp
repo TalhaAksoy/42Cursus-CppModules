@@ -23,6 +23,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &var) {
 	this->energyPoint = var.energyPoint;
 	this->attackDamage = var.attackDamage;
 	std::cout << "Operator Overlaod Called" << std::endl;
+	return (*this);
 }
 
 ClapTrap::ClapTrap(std::string name) {
