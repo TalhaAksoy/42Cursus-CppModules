@@ -5,7 +5,7 @@
 #ifndef INC_42CURSUS_CPPMODULES_FRAGTRAP_H
 #define INC_42CURSUS_CPPMODULES_FRAGTRAP_H
 
-#include "ScavTrap.h"
+#include "ClapTrap.h"
 
 class FragTrap:public ClapTrap{
 public:
@@ -15,6 +15,7 @@ public:
 	~FragTrap();
 	FragTrap &operator=(const FragTrap &var);
 	void highFivesGuys(void);
+	void attack(const std::string& target);
 };
 
 

@@ -1,45 +1,28 @@
-//
-// Created by saksoy on 12/3/22.
-//
+#include "ScavTrap.h"
+#include "FragTrap.h"
 
-# include "FragTrap.h"
+int main()
+{
+	ClapTrap john("John");
+	ClapTrap jim("Jim");
+	ClapTrap joe("Joe");
+	ScavTrap jane("Jane");
+	FragTrap joseph("Joseph");
 
-int main(){
-	ScavTrap *c1 = new ScavTrap();
-	FragTrap *c2 = new FragTrap("Zoro");
-	FragTrap *aux = new FragTrap();
-	FragTrap *c3 = new FragTrap(*aux);
-
-	std::cout << std::endl;
-
-	c1->attack("Slime");
-	c2->attack("Sanji");
-	c3->attack("Slime shiny");
-
-	std::cout << std::endl;
-
-	c1->takeDamage(80);
-	c2->takeDamage(50);
-	c2->takeDamage(50);
-	c3->takeDamage(5);
-
-	std::cout << std::endl;
-
-	c1->beRepaired(1000);
-	c2->beRepaired(1);
-	c3->beRepaired(5);
-
-	std::cout << std::endl;
-
-	c1->guardGate();
-	c2->highFivesGuys();
-	c3->highFivesGuys();
-
-	std::cout << std::endl;
-
-	delete c1;
-	delete c2;
-	delete aux;
-	delete c3;
-
+	john.attack("Marge");
+	john.attack("Bart");
+	john.attack("Homer");
+	john.takeDamage(5);
+	jim.takeDamage(9);
+	jim.takeDamage(10);
+	joe.beRepaired(10);
+	joe.takeDamage(19);
+	jane.attack("Lisa");
+	jane.takeDamage(99);
+	jane.beRepaired(50);
+	jane.guardGate();
+	joseph.attack("Maggie");
+	joseph.takeDamage(99);
+	joseph.beRepaired(50);
+	joseph.highFivesGuys();
 }

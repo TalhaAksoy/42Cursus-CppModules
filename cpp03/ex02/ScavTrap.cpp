@@ -37,6 +37,10 @@ void ScavTrap::attack(const std::string &target) {
 }
 
 void ScavTrap::guardGate() {
+	if (this->hitPoint == 0){
+		std::cout << "ScavTrap " << this->name << " cant in guard mode because is dead" << std::endl;
+		return;
+	}
 	std::cout << "This ScavTrap " << this->name << "in GuardGate Mode" << std::endl;
 }
 
