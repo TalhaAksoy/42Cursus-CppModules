@@ -17,6 +17,6 @@ int main(){
 	talha.attack("asd");
 	talha.attack("asd");
 	talha.takeDamage(9);
-	talha.beRepaired(10);
+	talha.beRepaired(100);
 	talha.attack("asd");
 }

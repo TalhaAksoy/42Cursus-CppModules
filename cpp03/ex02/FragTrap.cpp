@@ -39,11 +39,11 @@ FragTrap &FragTrap::operator=(const FragTrap &var) {
 }
 
 void FragTrap::highFivesGuys() {
-	if (this->hitPoint == 0){
-		std::cout << "This FragTrap " << this->name << "can't high five because he is dead" << std::endl;
+	if (this->hitPoint > 0 || this->energyPoint > 0){
+		std::cout << this->name << " FragTrap hight fives guys!!!" << std::endl;
 		return;
 	}
-	std::cout << this->name << " FragTrap hight fives guys!!!" << std::endl;
+	std::cout << "This FragTrap " << this->name << "can't high five because he is dead or mana out" << std::endl;
 }
 
 void FragTrap::attack(const std::string &target) {

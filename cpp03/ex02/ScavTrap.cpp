@@ -13,6 +13,7 @@ ScavTrap::ScavTrap(std::string name){
 	this->hitPoint = 100;
 	this->energyPoint = 50;
 	this->attackDamage = 20;
+	std::cout << "ScavTrap Name Constructor Called" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &var) {
@@ -37,11 +38,11 @@ void ScavTrap::attack(const std::string &target) {
 }
 
 void ScavTrap::guardGate() {
-	if (this->hitPoint == 0){
-		std::cout << "ScavTrap " << this->name << " cant in guard mode because is dead" << std::endl;
+	if (this->hitPoint > 0 && this->energyPoint >0){
+		std::cout << "This ScavTrap " << this->name << "in GuardGate Mode" << std::endl;
 		return;
 	}
-	std::cout << "This ScavTrap " << this->name << "in GuardGate Mode" << std::endl;
+	std::cout << "ScavTrap " << this->name << " cant in guard mode because is dead or mana out" << std::endl;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &var) {

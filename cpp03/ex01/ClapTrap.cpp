@@ -54,19 +54,28 @@ void ClapTrap::attack(const std::string &target) {
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
-	if (this->hitPoint < amount)
-		this->hitPoint = 0;
+	if (this->energyPoint > 0 && this->hitPoint > 0){
+		if (this->hitPoint < amount){
+			this->hitPoint = 0;
+			std::cout <<  this->name << " died" << std::endl;
+		}
+		else{
+			this->hitPoint -= amount;
+			std::cout << this->name << " take " << amount << " damage" << std::endl;
+		}
+	}
 	else
-		this->hitPoint -= amount;
-	std::cout << this->name << " take " << amount << " damage" << std::endl;
+	{
+		if (energyPoint < 1)
+			std::cout << "Mana out" << std::endl;
+		else
+			std::cout << this->name << " died" << std::endl;
+	}
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
 	if (this->energyPoint > 0 && this->hitPoint > 0){
-		if (amount + hitPoint > 10)
-			this->hitPoint = 10;
-		else
-			this->hitPoint = amount;
+		this->hitPoint += amount;
 		--this->energyPoint;
 		std::cout << this->name << " repaired HP " << amount << std::endl;
 	}
