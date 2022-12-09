@@ -18,6 +18,7 @@ ScavTrap::ScavTrap(std::string name){
 
 ScavTrap::ScavTrap(const ScavTrap &var) {
 	*this = var;
+	std::cout << "ScavTrap Copy Constructor Called " << std::endl;
 }
 
 ScavTrap::~ScavTrap() {

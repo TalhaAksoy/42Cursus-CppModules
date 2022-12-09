@@ -22,7 +22,7 @@ FragTrap::FragTrap(std::string name) {
 
 FragTrap::FragTrap(const FragTrap &var) {
 	*this = var;
-	std::cout << "Copy Constructor Called" << std::endl;
+	std::cout << "FragTrap Copy Constructor Called" << std::endl;
 }
 
 FragTrap::~FragTrap() {

@@ -17,12 +17,12 @@ ScavTrap::ScavTrap(std::string name){
 	this->hitPoint = 100;
 	this->energyPoint = 50;
 	this->attackDamage = 20;
-	std::cout << "Name Constructor Called" << std::endl;
+	std::cout << "ScavTrap Name Constructor Called" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &var) {
 	*this = var;
-	std::cout << "Copy Constructor Called" << std::endl;
+	std::cout << "ScavTrap Copy Constructor Called" << std::endl;
 }
 
 ScavTrap::~ScavTrap() {

@@ -3,6 +3,9 @@
 
 int main()
 {
-	ScavTrap talha("talha");
-	talha.takeDamage(10);
+	FragTrap talha("talha");
+
+	talha.takeDamage(20);
+	talha.beRepaired(10);
+	talha.highFivesGuys();
 }

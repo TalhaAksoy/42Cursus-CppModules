@@ -8,7 +8,8 @@ int main(){
 	ScavTrap talha("talha");
 
 	talha.attack("asd");
-	talha.takeDamage(1000);
+	talha.takeDamage(20);
 	talha.beRepaired(10);
+	talha.guardGate();
 
 }
