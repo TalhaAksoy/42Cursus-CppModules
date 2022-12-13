@@ -14,7 +14,7 @@ public:
 	Brain();
 	Brain(std::string *var);
 	Brain(const Brain& var);
-	virtual ~Brain();
+	~Brain();
 	Brain &operator=(const Brain& var);
 	std::string *getIdeas() const;
 };

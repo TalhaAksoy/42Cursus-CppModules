@@ -46,7 +46,6 @@ int main( void )
 	Cat & fifi_copy_ref = fifi_copy;
 
 	std::cout << std::endl << "comparing" << std::endl;
-	printf("%p | %p | %p\n", &medor_copy, &medor , &medor_copy_ref);
 
 	medor.compareTo(medor_copy_ref);
 	fifi.compareTo(fifi_copy_ref);
@@ -70,5 +69,5 @@ int main( void )
 		delete animal_array[i];
 	std::cout << std::endl;
 
-//	system("leaks Poly");
+	system("leaks Poly");
 }
