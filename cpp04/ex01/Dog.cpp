@@ -7,18 +7,18 @@
 
 Dog::Dog(){
 	this->type = "Default Dog";
-	this->brain = new Brain();
+	this->brain = new Brain;
 	std::cout << "Default - Dog - Constructor Called" << std::endl;
 }
 
 Dog::Dog(std::string type){
 	this->type = type;
-	this->brain = new Brain();
+	this->brain = new Brain;
 	std::cout << "Name - Dog - Constructor Called" << std::endl;
 }
 
 Dog::Dog(const Dog &var) {
-	*this = var;
+	this->type = var.getType();
 	this->brain = new Brain( *(var.brain) );
 	std::cout << "Copy - Dog - Constructor Called" << std::endl;
 }
@@ -26,13 +26,14 @@ Dog::Dog(const Dog &var) {
 Dog &Dog::operator=(const Dog &var) {
 	this->type = var.type;
 	if (this->brain)
-		delete [] this->brain;
+		delete this->brain;
 	this->brain = new Brain(*(var.brain));
 	std::cout << "Operator - Dog - Called" << std::endl;
 	return (*this);
 }
 
 Dog::~Dog() {
+	delete this->brain;
 	std::cout << "Deconstructor - Dog - Called" << std::endl;
 }
 
@@ -52,10 +53,7 @@ void Dog::compareTo(const Dog &var) const {
 	std::cout << std::endl;
 	std::cout << "My brain's ideas \t | \t\t Other brain's ideas" << std::endl;
 	std::cout << std::endl;
-	for ( int i = 0; i < 100; i++ ){
-		//std::cout << (brain->getIdeas())[i] << "\t\t | \t\t" << ( var.brain->getIdeas() )[i] << std::endl;
-		printf("ilk[i] => %p[%d]\n", (brain->getIdeas())[i].c_str(), i);
-		printf("var[i] => %p[%d]\n", (var.brain->getIdeas())[i].c_str(), i);
-	}
+	for ( int i = 0; i < 100; i++ )
+		std::cout << (brain->getIdeas())[i] << "\t\t | \t\t" << ( var.brain->getIdeas() )[i] << std::endl;
 	std::cout << std::endl;
 }

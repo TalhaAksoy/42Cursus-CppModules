@@ -17,7 +17,7 @@ Cat::Cat(std::string type){
 }
 
 Cat::Cat(const Cat &var) {
-	*this = var;
+	this->type = var.getType();
 	this->brain = new Brain(*(var.brain));
 	std::cout << "Copy - Cat - Constructor Called" << std::endl;
 }
@@ -25,13 +25,14 @@ Cat::Cat(const Cat &var) {
 Cat &Cat::operator=(const Cat &var) {
 	this->type = var.type;
 	if (this->brain)
-		delete [] brain;
+		delete brain;
 	this->brain = new Brain(*(var.brain));
 	std::cout << "Operator - Cat - Called" << std::endl;
 	return (*this);
 }
 
 Cat::~Cat() {
+	delete this->brain;
 	std::cout << "Deconstructor - Cat - Called" << std::endl;
 }
 

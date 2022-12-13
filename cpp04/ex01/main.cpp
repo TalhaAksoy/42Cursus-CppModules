@@ -70,5 +70,5 @@ int main( void )
 		delete animal_array[i];
 	std::cout << std::endl;
 
-	//system("leaks Brain");
+//	system("leaks Poly");
 }
