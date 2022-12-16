@@ -5,7 +5,9 @@
 #include "Bureaucrat.h"
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &var) {
-	this->setName(var.name);
+	if(this == &var) {
+		return *this;
+	}
 	this->setGrade(var.grade);
 	return *this;
 }
@@ -39,10 +41,6 @@ void Bureaucrat::setGrade(int grade) {
 	else{
 		this->grade = grade;
 	}
-}
-
-void Bureaucrat::setName(const std::string name) {
-	this->name = name;
 }
 
 Bureaucrat::~Bureaucrat() {

@@ -12,7 +12,6 @@ private:
 	const std::string	name;
 	int					grade;
 	void				setGrade(int grade);
-	void				setName(const std::string name);
 	class GradeTooHighException: public std::exception{
 	public:
 		const char *what() const throw(){
