@@ -51,3 +51,23 @@ std::ostream &operator<<(std::ostream &out, Bureaucrat const &var){
 	out << var.getName() << ", grade => " << var.getGrade() << std::endl;
 	return (out);
 }
+
+void Bureaucrat::increment() {
+	setGrade(this->grade - 1);
+}
+
+void Bureaucrat::increment(int nbr) {
+	setGrade(this->grade - nbr);
+}
+
+void Bureaucrat::decrement() {
+	setGrade(this->grade + 1);
+}
+
+void Bureaucrat::decrement(int nbr) {
+	setGrade(this->grade + nbr);
+}
+
+void Bureaucrat::signForm(const Form& var) const{
+	var.beSigned(*this);
+}
