@@ -1,57 +1,72 @@
-#include "Form.h"
+//
+// Created by Mehmet eren Akbulut on 12/11/22.
+//
 
-Form::Form() : _isSigned(false), _name("default"), _gradeToSign(150), _gradeToExecute(150) {
-	cout << "Form Default Constructor" << endl;
+#include "Form.hpp"
+#include "Bureaucrat.hpp"
+
+Form::Form() :_name("Form"), _sign(false), _signExec(1), _signGrade(1) {
+    return;
 }
 
-Form::Form(const string &name, int gradeToSign, int gradeToExecute) : _isSigned(false), _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute) {
-	const int i = this->getGradeToSign();
-	const int j = this->getGradeToExecute();
-	if (i > 150 || j > 150)
-		throw(Form::GradeTooLowException());
-	else if( i < 1 || j < 1)
-		throw(Form::GradeTooHighException());
-	cout << "Form Constructor called" << endl;
+Form::Form(const std::string name) : _name(name), _sign(false),  _signExec(1), _signGrade(1){
+    return;
 }
 
-Form::Form(const Form &form) : _isSigned(form._isSigned), _name(form._name), _gradeToSign(form._gradeToSign), _gradeToExecute(form._gradeToExecute) {
-	*this = form;
-	cout << "Form Copy Constructor" << endl;
+Form::Form(const std::string name, const unsigned int signGrade, const unsigned int signExec): _name(name), _sign(false), _signExec(signExec), _signGrade(signGrade){
+    return;
 }
 
-Form &Form::operator=(const Form &form) {
-	if (this == &form)
-		return *this;
-	cout << "Form Assignment Operator" << endl;
-	return *this;
+Form::Form(const Form& other) :  _name(other._name), _sign(other._sign), _signExec(other._signExec), _signGrade(other._signGrade) {
+    return;
 }
 
-bool Form::isSigned() const {
-	return _isSigned;
+Form& Form::operator=(const Form &other){
+    this->_sign = other._sign;
+    return *this;
 }
 
-string Form::getName() const {
-	return _name;
+Form::~Form(void)
+{
+    return;
 }
 
-int Form::getGradeToSign() const {
-	return _gradeToSign;
+unsigned int Form::getGradeSign() const
+{
+    return this->_signGrade;
 }
 
-int Form::getGradeToExecute() const {
-	return _gradeToExecute;
+unsigned int Form::getGradeExec() const
+{
+    return this->_signExec;
 }
 
-void Form::beSigned(const Bureaucrat &bureaucrat) const {
-	if (bureaucrat.getGrade() <= _gradeToSign) {
-		this->_isSigned = true;
-		cout << bureaucrat.getName() << " signed " << _name << endl;
-	} else {
-		cout << bureaucrat.getName() << " couldn’t sign " << _name << " because ";
-		throw GradeTooLowException();
-	}
+std::string Form::getName() const
+{
+    return this->_name;
 }
 
-Form::~Form() {
-	cout << "Form Destructor" << endl;
+bool Form::isSigned() const
+{
+    return this->_sign;
+}
+
+void Form::beSigned(const Bureaucrat& candidate)
+{
+    if (!this->_sign)
+    {
+        if (candidate.getGrade() <= this->_sign)
+            this->_sign = true;
+        else
+            throw Form::GradeTooLowException();
+    }
+    else
+        throw Form::GradeTooHighException();
+}
+
+std::ostream& operator<<(std::ostream& o, const Form& rhs)
+{
+    o << "Form " << rhs.getName() << ": ";
+    o << "{signed: " << std::boolalpha << rhs.isSigned() << ", gradeSign: " << rhs.getGradeSign() << ", gradeExec: " << rhs.getGradeExec() << "}";
+    return o;
 }

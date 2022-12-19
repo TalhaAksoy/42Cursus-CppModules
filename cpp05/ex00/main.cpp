@@ -1,19 +1,29 @@
 //
-// Created by Selim talha Aksoy on 12/16/22.
+// Created by Mehmet eren Akbulut on 12/10/22.
 //
 
-#include "Bureaucrat.h"
+#include "Bureaucrat.hpp"
 
 int main()
 {
-	try{
-		Bureaucrat bureaucrat("Bob", 10);
-		std::cout << bureaucrat;
+    Bureaucrat john("John", 2);
+    Bureaucrat jim("Jim", 149);
 
-		Bureaucrat bureaucrat2("bob",0);
-	}
-	catch(std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
-	return 0;
+    try
+    {
+        std::cout << john << std::endl;
+        std::cout << jim << std::endl;
+        john.incrementGrade();
+        jim.decrementGrade();
+        std::cout << john << std::endl;
+        std::cout << jim << std::endl;
+        john.incrementGrade();
+        jim.decrementGrade();
+        std::cout << john << std::endl;
+        std::cout << jim << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
 }

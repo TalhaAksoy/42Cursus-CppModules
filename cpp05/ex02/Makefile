@@ -1,6 +1,6 @@
-NAME = Breaucrat
+NAME = Bureaucrat
 
-SRC = Bureaucrat.cpp Form.cpp main.cpp
+SRC = AForm.cpp Bureaucrat.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp main.cpp
 
 OBJS = $(SRC:%.cpp=%.o)
 
@@ -18,3 +18,6 @@ fclean : clean
 re : fclean all
 
 .PHONY : all clean fclean re
+
+debug : all
+	./$(NAME)

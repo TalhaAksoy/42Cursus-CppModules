@@ -1,26 +1,20 @@
-NAME = Bureaucrat
+NAME = Breaucrat
 
-SRCS =	$(wildcard *.cpp)
+SRC = Bureaucrat.cpp main.cpp
 
-OBJS = ${SRCS:.cpp=.o}
+OBJS = $(SRC:%.cpp=%.o)
 
-CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+all : $(NAME)
 
-all: $(NAME)
+$(NAME) : $(OBJS)
+	c++ $(SRC) -o $(NAME) -std=c++98 -Wall -Wextra -Werror
 
-.cpp.o:
-	$(CC) $(CFLAGS) -c $< -o $(<:.cpp=.o)
+clean :
+	rm -rf $(OBJS)
 
-$(NAME): $(OBJS)
-	$(CC) $(OBJS) $(CFLAGS) -o $(NAME)
+fclean : clean
+	rm -rf $(NAME)
 
-clean:
-	@$(RM)  $(OBJS)
+re : fclean all
 
-fclean: clean
-	@$(RM) $(NAME)
-
-re: fclean all
-
-.PHONY: all clean fclean re
+.PHONY : all clean fclean re
