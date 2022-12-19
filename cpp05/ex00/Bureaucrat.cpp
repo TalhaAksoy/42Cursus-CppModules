@@ -1,7 +1,3 @@
-//
-// Created by Mehmet eren Akbulut on 12/10/22.
-//
-
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(void) : _name("Bureaucrat"), _grade(150){

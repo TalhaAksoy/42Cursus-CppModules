@@ -1,7 +1,3 @@
-//
-// Created by Mehmet eren Akbulut on 12/10/22.
-//
-
 #ifndef CPP_MODULE_BUREAUCRAT_HPP
 #define CPP_MODULE_BUREAUCRAT_HPP
 
