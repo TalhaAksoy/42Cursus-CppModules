@@ -1,29 +1,17 @@
 //
-// Created by Mehmet eren Akbulut on 12/10/22.
+// Created by Selim talha Aksoy on 12/20/22.
 //
 
-#include "Bureaucrat.hpp"
+# define warning "UwU"
 
-int main()
-{
-    Bureaucrat john("John", 2);
-    Bureaucrat jim("Jim", 149);
+#include "Bureaucrat.h"
 
-    try
-    {
-        std::cout << john << std::endl;
-        std::cout << jim << std::endl;
-        john.incrementGrade();
-        jim.decrementGrade();
-        std::cout << john << std::endl;
-        std::cout << jim << std::endl;
-        john.incrementGrade();
-        jim.decrementGrade();
-        std::cout << john << std::endl;
-        std::cout << jim << std::endl;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
+int main(){
+	try{
+		Bureaucrat talha("talha");
+		std::cout << talha << std::endl;
+	}
+	catch (const std::exception& e){
+		std::cerr << e.what() << std::endl;
+	}
 }

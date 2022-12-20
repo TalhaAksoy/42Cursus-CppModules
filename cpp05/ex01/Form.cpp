@@ -1,72 +1,59 @@
 //
-// Created by Mehmet eren Akbulut on 12/11/22.
+// Created by Selim talha Aksoy on 12/20/22.
 //
 
-#include "Form.hpp"
-#include "Bureaucrat.hpp"
+#include "Form.h"
 
-Form::Form() :_name("Form"), _sign(false), _signExec(1), _signGrade(1) {
-    return;
+Form::Form():_name("Default Name"),isSign(false),_requireToSign(150),_execToSign(150) {
+	std::cout << "Const Called" << std::endl;
 }
 
-Form::Form(const std::string name) : _name(name), _sign(false),  _signExec(1), _signGrade(1){
-    return;
+Form::Form(const std::string name_):_name(name_),isSign(false),_requireToSign(150),_execToSign(150) {
+	std::cout << "Name Const Called" << std::endl;
 }
 
-Form::Form(const std::string name, const unsigned int signGrade, const unsigned int signExec): _name(name), _sign(false), _signExec(signExec), _signGrade(signGrade){
-    return;
+Form::Form(const std::string name_, int requireToSign_, int execToSign_):_name(name_),isSign(false),_requireToSign(requireToSign_),_execToSign(execToSign_) {
+	std::cout << "Name And Other Value Const Called" << std::endl;
 }
 
-Form::Form(const Form& other) :  _name(other._name), _sign(other._sign), _signExec(other._signExec), _signGrade(other._signGrade) {
-    return;
+Form::Form(const Form &var):_name(var._name),isSign(var.isSign),_requireToSign(var._requireToSign),_execToSign(var._execToSign) {
+	std::cout << "Copy Const Called" << std::endl;
 }
 
-Form& Form::operator=(const Form &other){
-    this->_sign = other._sign;
-    return *this;
+Form::~Form() {
+	std::cout << "Form Deconst Called" << std::endl;
 }
 
-Form::~Form(void)
-{
-    return;
+std::string Form::getName() const {
+	return this->_name;
 }
 
-unsigned int Form::getGradeSign() const
-{
-    return this->_signGrade;
+int Form::getExecToSign() const {
+	return this->_execToSign;
 }
 
-unsigned int Form::getGradeExec() const
-{
-    return this->_signExec;
+void Form::setExecToSign(int sign_) {
+	this->_execToSign = sign_;
 }
 
-std::string Form::getName() const
-{
-    return this->_name;
+int Form::getRequireToSign() const {
+	return this->_requireToSign;
 }
 
-bool Form::isSigned() const
-{
-    return this->_sign;
+void Form::setRequireToSign(int sign_) {
+	this->_requireToSign = sign_;
 }
 
-void Form::beSigned(const Bureaucrat& candidate)
-{
-    if (!this->_sign)
-    {
-        if (candidate.getGrade() <= this->_sign)
-            this->_sign = true;
-        else
-            throw Form::GradeTooLowException();
-    }
-    else
-        throw Form::GradeTooHighException();
+bool Form::isSigned() const {
+	return this->isSign;
 }
 
-std::ostream& operator<<(std::ostream& o, const Form& rhs)
-{
-    o << "Form " << rhs.getName() << ": ";
-    o << "{signed: " << std::boolalpha << rhs.isSigned() << ", gradeSign: " << rhs.getGradeSign() << ", gradeExec: " << rhs.getGradeExec() << "}";
-    return o;
+void Form::beSigned(const Bureaucrat &var) const {
+	if (var.getGrade() <= this->_requireToSign){
+		this->isSign = true;
+		std::cout << var.getName() << " signed " << this->_name << std::endl;
+	}else{
+		std::cout << var.getName() << " couldn't sign " << this->_name << " because To Low Then Sign Grade" << std::endl;
+		throw GradeTooLowException();
+	}
 }
