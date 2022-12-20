@@ -53,6 +53,7 @@ public:
 
 	void beSigned(const Bureaucrat& var) const;
 	bool isSigned() const;
+	virtual void		execute(const Bureaucrat &executor) const = 0;
 };
 
 std::ostream &operator<<(std::ostream &out , const AForm& var);

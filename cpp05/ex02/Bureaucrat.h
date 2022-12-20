@@ -41,6 +41,7 @@ public:
 	std::string getName() const;
 
 	void signForm(const AForm& var) const;
+	void executeForm(const AForm &form);
 };
 
 std::ostream &operator<<(std::ostream &out , const Bureaucrat& var);

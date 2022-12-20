@@ -13,11 +13,11 @@ int main()
 		PresidentialPardonForm abc("Form3");
 
 		a.signForm(abc);
-		abc.execute(a);
+		a.executeForm(abc);
 		a.signForm(asd);
-		asd.execute(a);
+		a.executeForm(asd);
 		a.signForm(form);
-		form.execute(a);
+		a.executeForm(form);
 	}
 	catch(std::exception& e) {
 		std::cout << e.what() << std::endl;
