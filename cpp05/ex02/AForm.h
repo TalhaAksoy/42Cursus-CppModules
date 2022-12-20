@@ -11,7 +11,7 @@
 class Bureaucrat;
 
 
-class Form {
+class AForm {
 private:
 	const std::string	_name;
 	mutable bool		isSign;
@@ -22,21 +22,27 @@ public:
 	class GradeTooHighException:public std::exception{
 		public:
 			const char* what() const throw(){
-				return "Form Grade To High";
+				return "AForm Grade To High";
 			}
 	};
 	class GradeTooLowException:public std::exception{
 		public:
 			const char* what() const throw(){
-				return "Form Grade To Low";
+				return "AForm Grade To Low";
 			}
 	};
-	Form();
-	Form(const std::string name_);
-	Form(const std::string name_, int requireToSign_, int execToSign_);
-	Form(const Form& var);
-	~Form();
-	Form& operator=(const Form& var);
+	class FormNotSignedException:public std::exception{
+		public:
+			const char* what() const throw(){
+				return "Form Not Signed";
+			}
+	};
+	AForm();
+	AForm(const std::string name_);
+	AForm(const std::string name_, int requireToSign_, int execToSign_);
+	AForm(const AForm& var);
+	virtual ~AForm();
+	AForm& operator=(const AForm& var);
 
 	std::string getName() const;
 	int getRequireToSign() const;
@@ -49,6 +55,6 @@ public:
 	bool isSigned() const;
 };
 
-std::ostream &operator<<(std::ostream &out , const Form& var);
+std::ostream &operator<<(std::ostream &out , const AForm& var);
 
 #endif //FORM_H

@@ -6,6 +6,9 @@
 #define BUREAUCRAT_H
 
 # include <iostream>
+# include "AForm.h"
+
+class AForm;
 
 class Bureaucrat {
 private:
@@ -20,7 +23,7 @@ public:
 
 	Bureaucrat& operator=(const Bureaucrat &var);
 
-	class GradeTooHighException :public std::exception{
+	class GradeTooHighException:public std::exception{
 		public:
 			const char *what() const throw(){
 				return "Grade To High";
@@ -37,6 +40,7 @@ public:
 	void		setGrade(int grade_);
 	std::string getName() const;
 
+	void signForm(const AForm& var) const;
 };
 
 std::ostream &operator<<(std::ostream &out , const Bureaucrat& var);

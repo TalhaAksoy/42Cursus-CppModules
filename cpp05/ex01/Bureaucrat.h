@@ -23,15 +23,17 @@ public:
 
 	Bureaucrat& operator=(const Bureaucrat &var);
 
-	class GradeToHigh:public std::exception{
-		const char *what() const throw(){
-			return "Grade To High";
-		}
+	class GradeTooHighException:public std::exception{
+		public:
+			const char *what() const throw(){
+				return "Grade To High";
+			}
 	};
-	class GradeToLow:public std::exception{
-		const char	*what() const throw(){
-			return "Grade To Low";
-		}
+	class GradeTooLowException:public std::exception{
+		public:
+			const char	*what() const throw(){
+				return "Grade To Low";
+			}
 	};
 
 	int			getGrade() const;
