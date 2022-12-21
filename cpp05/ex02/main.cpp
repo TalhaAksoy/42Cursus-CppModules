@@ -7,7 +7,7 @@
 int main()
 {
 	try{
-		Bureaucrat a("Bob", 1);
+		Bureaucrat a("Bob", 600);
 		ShrubberyCreationForm form("Form");
 		RobotomyRequestForm asd("Form2");
 		PresidentialPardonForm abc("Form3");

@@ -8,7 +8,7 @@
 
 int main(){
 	try{
-		Bureaucrat talha("talha");
+		Bureaucrat talha("talha", 200);
 		std::cout << talha << std::endl;
 	}
 	catch (const std::exception& e){

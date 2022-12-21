@@ -29,10 +29,10 @@ Bureaucrat::~Bureaucrat() {
 
 void Bureaucrat::setGrade(int grade_) {
 	if (grade_ < 1){
-		throw GradeToHigh();
+		throw GradeTooHighException();
 	}
 	else if (grade_ > 150){
-		throw GradeToLow();
+		throw GradeTooLowException();
 	}
 	else{
 		_grade = grade_;

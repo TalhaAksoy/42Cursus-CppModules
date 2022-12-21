@@ -8,14 +8,14 @@
 int main()
 {
 	Bureaucrat	chad("Chad", 5);
-	Intern		virgin;
+	Intern		asd;
 	AForm		*forms[5];
 
-	forms[0] = virgin.makeForm("shrubbery creation", "document");
-	forms[1] = virgin.makeForm("robotomy request", "Marie");
-	forms[2] = virgin.makeForm("presidential pardon", "Marie");
-	forms[3] = virgin.makeForm("random request", "random");
-	forms[4] = virgin.makeForm("robotomomy request", "random");
+	forms[0] = asd.makeForm("shrubbery creation", "document");
+	forms[1] = asd.makeForm("robotomy request", "Marie");
+	forms[2] = asd.makeForm("presidential pardon", "Marie");
+	forms[3] = asd.makeForm("random request", "random");
+	forms[4] = asd.makeForm("robotomomy request", "random");
 
 	for (int i = 0; i < 5; ++i)
 	{
