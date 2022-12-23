@@ -1,27 +1,28 @@
-NAME = serial
+NAME			=	serialize
 
-SRCS =	$(wildcard *.cpp)
+SRCS			=	main.cpp Data.cpp
+LIB				=	Data.hpp
 
-OBJS = ${SRCS:.cpp=.o}
+OBJS			=	$(SRCS:%.cpp=%.o)
 
-CC = c++
+CC				= 	c++
+RM				= 	rm -rf
+CPPFLAGS		= 	-Wall -Wextra -Werror -std=c++98
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+all:			$(NAME)
 
-all: $(NAME)
-
-.cpp.o:
-	$(CC) $(CFLAGS) -c $< -o $(<:.cpp=.o)
-
-$(NAME): $(OBJS)
-	$(CC) $(OBJS) $(CFLAGS) -o $(NAME)
+$(NAME):		$(OBJS) $(LIB)
+				$(CC) $(CPPFLAGS) $(SRCS) -o $(NAME)
 
 clean:
-	@$(RM)  $(OBJS)
+				$(RM) $(OBJS)
 
-fclean: clean
-	@$(RM) $(NAME) *_shrubbery
+fclean:			clean
+				$(RM) $(NAME)
 
-re: fclean all
+re:				fclean $(NAME)
 
-.PHONY: all clean fclean re
+norm:
+				norminette *.[ch]
+
+.PHONY:			all clean fclean re bonus

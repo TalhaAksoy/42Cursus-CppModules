@@ -1,14 +1,25 @@
-#include "Data.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ftekdrmi <ftekdrmi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/30 17:25:56 by ftekdrmi          #+#    #+#             */
+/*   Updated: 2022/11/30 17:26:09 by ftekdrmi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-Data* deserialize(std::uintptr_t *raw);
-std::uintptr_t serialize(Data *ptr);
-int main(){
+#include "Data.hpp"
+
+int main( void )
+{
 	Data dt;
 	Data* dtPtr = &dt;
 
-	std::cout << deserialize( serialize( dtPtr ) )->a <<  std::endl;
-	std::cout << deserialize( serialize( dtPtr ) )->ch << std::endl;
-	std::cout << deserialize( serialize( dtPtr ) )->b <<  std::endl;
+	cout << deserialize( serialize( dtPtr ) )->a << endl;
+	cout << deserialize( serialize( dtPtr ) )->ch << endl;
+	cout << deserialize( serialize( dtPtr ) )->b << endl;
 
 	return 0;
 }

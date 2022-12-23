@@ -1,44 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.cpp                                           :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftekdrmi <ftekdrmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/30 17:25:51 by ftekdrmi          #+#    #+#             */
+/*   Created: 2022/11/30 17:25:53 by ftekdrmi          #+#    #+#             */
 /*   Updated: 2022/11/30 17:26:09 by ftekdrmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
+#ifndef DATA_HPP
+#define DATA_HPP
 
-Data::Data() : a( 10 ), ch( 'A' ), b( true ) {};
+#include <iostream>
 
-Data::Data( const Data& cpy )
+using std::cout;
+using std::endl;
+using std::string;
+
+class Data
 {
-    *this = cpy;
+public:
+    Data();
+    Data( const Data &cpy );
+    Data& operator = ( const Data& obj );
+    ~Data();
+	int a;
+	char ch;
+	bool b;
 };
 
-Data& Data::operator = ( const Data& obj )
-{
-	this->a = obj.a;
-	this->b = obj.b;
-	this->ch = obj.ch;
-    return ( *this );
-}
+uintptr_t serialize( Data* ptr );
+Data* deserialize( uintptr_t raw );
 
-Data::~Data(){};
-
-uintptr_t serialize( Data* ptr )
-{
-    uintptr_t tmp = reinterpret_cast<uintptr_t>( ptr );
-
-    return tmp;
-}
-
-Data* deserialize( uintptr_t raw )
-{
-	Data *tmp = reinterpret_cast<Data *>( raw );
-	
-	return tmp;
-}
+#endif
