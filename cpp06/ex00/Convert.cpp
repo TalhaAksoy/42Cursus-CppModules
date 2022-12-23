@@ -46,6 +46,7 @@ void Convert::toChar(const std::string &str) {
 	}catch (std::exception &e){
 		if (str.length() == 1 && isprint(str[0]))
 			c = str[0];
+		std::cout << "int : Non displayable" << std::endl;
 	}
 	std::cout << "char :" << (isprint(c) ? std::string(1, c).c_str() : "Non Displayable") << std::endl;
 }

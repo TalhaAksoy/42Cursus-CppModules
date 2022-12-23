@@ -19,13 +19,7 @@ using std::cout;
 using std::endl;
 using std::string;
 
-class Data
-{
-public:
-    Data();
-    Data( const Data &cpy );
-    Data& operator = ( const Data& obj );
-    ~Data();
+struct Data{
 	int a;
 	char ch;
 	bool b;

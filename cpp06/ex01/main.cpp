@@ -15,6 +15,9 @@
 int main( void )
 {
 	Data dt;
+	dt.a = 10;
+	dt.ch = 'a';
+	dt.b = true;
 	Data* dtPtr = &dt;
 
 	cout << deserialize( serialize( dtPtr ) )->a << endl;
