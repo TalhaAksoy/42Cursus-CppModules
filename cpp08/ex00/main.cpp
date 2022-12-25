@@ -11,9 +11,8 @@ int main() {
 	v.push_back(3);
 	v.push_back(4);
 	v.push_back(5);
-
 	try{
-		std::vector<int>::iterator it = easyfind(v, 6);
+		std::vector<int>::iterator it = easyfind(v, 3);
 		if(it != v.end())
 			std::cout << *it << std::endl;
 	}
