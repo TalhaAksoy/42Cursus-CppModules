@@ -12,8 +12,13 @@ int main() {
 	v.push_back(4);
 	v.push_back(5);
 
-	std::vector<int>::iterator it = easyfind(v, 2);
-	if(it != v.end())
-		std::cout << *it << std::endl;
+	try{
+		std::vector<int>::iterator it = easyfind(v, 6);
+		if(it != v.end())
+			std::cout << *it << std::endl;
+	}
+	catch (std::exception &a){
+		std::cout << a.what() << std::endl;
+	}
 	return 0;
 }
